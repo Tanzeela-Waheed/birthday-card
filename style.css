@@ -15,21 +15,21 @@
   justify-content:center;
   align-items:center;
   overflow:hidden;
+  padding:20px;
 }
 
 .hidden{ display:none; }
 .active{ display:flex; }
 
-
-
 /* GOLDEN CARD STYLE */
 .card{
   position:relative;
   z-index:2;
+  width:100%;
   max-width:700px;
   padding:40px;
   border-radius:20px;
-  background: rgba(255, 215, 0, 0.15); /* golden touch */
+  background: rgba(255, 215, 0, 0.15);
   border:1px solid rgba(255, 215, 0, 0.3);
   backdrop-filter: blur(15px);
   box-shadow: 0 10px 30px rgba(255,215,0,0.3);
@@ -52,19 +52,22 @@
   object-fit:cover;
   border:3px solid rgba(255,215,0,0.7);
   margin-bottom:20px;
+  max-width:100%;
 }
 
 /* HEADINGS AND TEXT */
 h1{
   font-size:36px;
   margin-bottom:15px;
-  color:#ffeb99; /* soft golden */
+  color:#ffeb99;
+  word-wrap:break-word;
 }
 
 p{
   font-size:18px;
   line-height:1.8;
   color:#fffacd;
+  word-wrap:break-word;
 }
 
 /* BUTTON */
@@ -78,25 +81,28 @@ button{
   font-weight:600;
   cursor:pointer;
   transition: transform 0.3s, box-shadow 0.3s;
+  max-width:100%;
 }
+
 button:hover{
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(255,215,0,0.6);
 }
 
+/* TOP SMALL CARD */
 .card1{
-  position: absolute;
-  top: 10%;
-  left: 24%;
-  transform: translate(-50%, -50%);
+  position:absolute;
+  top:10%;
+  left:24%;
+  transform:translate(-50%, -50%);
 
-  width: 600px;          /* 700px se chhota */
-  max-width: 75%;        /* thora adjust */
-  min-height: 30px;      /* thora reduce */
+  width:600px;
+  max-width:75%;
+  min-height:30px;
 
-  padding: 5px 10px;    /* thora kam padding */
+  padding:5px 10px;
 
-  text-align: center;
+  text-align:center;
 
   background: rgba(59, 38, 15, 0.28);
   backdrop-filter: blur(14px);
@@ -109,6 +115,8 @@ button:hover{
   color: #f5f5f5;
   font-size: 17px;
   line-height: 1.2;
+
+  z-index:2;
 }
 
 .card1:hover{
@@ -116,87 +124,274 @@ button:hover{
   transition: 0.3s ease;
 }
 
-
 /* SECOND PAGE RECTANGLE BOX */
 .card2{
-  position: absolute;
-  top: 10%;          /* upar se thora niche */
-  left: 5%;          /* left align */
-  
-  width: 500px;      /* rectangle width */
-  min-height: 250px; /* maintain rectangular shape */
-  height: auto;
-  
-  background: rgba(255, 215, 0, 0.15); /* golden touch */
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  border-radius: 12px;  /* slightly rounded corners */
-  backdrop-filter: blur(12px);
-  
-  padding: 20px 18px;
-  text-align: left;
-  overflow: visible;
+  position:absolute;
+  top:10%;
+  left:5%;
 
-  box-shadow: 0 8px 25px rgba(255,215,0,0.3); /* soft glow */
+  width:500px;
+  max-width:90vw;
+  min-height:250px;
+  height:auto;
+
+  background: rgba(255, 215, 0, 0.15);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+
+  padding:20px 18px;
+  text-align:left;
+  overflow:visible;
+
+  box-shadow: 0 8px 25px rgba(255,215,0,0.3);
+
+  z-index:2;
 }
 
 /* TEXT INSIDE BOX */
 .card2 p{
-  font-size: 18px;
-  line-height: 1.6;
-  color: #fffacd;
-  margin: 0;
-
+  font-size:18px;
+  line-height:1.6;
+  color:#fffacd;
+  margin:0;
 }
+
 #typingText{
-  font-size: 16px;
-  line-height: 1.8;
-  color: #fffacd;
-  text-align: left;
+  font-size:16px;
+  line-height:1.8;
+  color:#fffacd;
+  text-align:left;
+  word-wrap:break-word;
 }
 
 @keyframes blink{
   50%{opacity:0;}
 }
 
-/* BACKGROUND IMAGE FIX - Niche se SHOW HO */
+/* BACKGROUND IMAGE */
 .bg-image{
-  position: fixed;
-  bottom: 0;               /* bottom se start */
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100vw;
+  height:100vh;
 
-  background-size: cover;      /* screen fill */
-  background-position: center bottom; /* important: bottom focus */
-  background-repeat: no-repeat;
+  background-size:cover;
+  background-position:center bottom;
+  background-repeat:no-repeat;
 
   filter: brightness(0.88) contrast(1.05);
-  z-index: 0;
+  z-index:0;
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
+/* =========================
+   LARGE SCREENS / TV
+========================= */
+@media (min-width:1600px){
+
   .card{
-    padding:30px 20px;
+    max-width:900px;
+    padding:60px;
   }
-  .profile{
-    width:120px;
-    height:120px;
-  }
+
   h1{
-    font-size:28px;
+    font-size:48px;
   }
+
   p{
-    font-size:16px;
+    font-size:24px;
   }
+
+  .profile{
+    width:220px;
+    height:220px;
+  }
+
+  .card1{
+    width:750px;
+    font-size:22px;
+  }
+
   .card2{
-    padding-left:20px;
-    padding-right:20px;
-    text-align:center;
+    width:700px;
+    min-height:320px;
+  }
+
+  #typingText{
+    font-size:22px;
+  }
+}
+
+/* =========================
+   LAPTOPS
+========================= */
+@media (max-width:1200px){
+
+  .card1{
+    left:30%;
+    max-width:80%;
+  }
+
+  .card2{
+    width:450px;
+  }
+}
+
+/* =========================
+   TABLETS / IPADS
+========================= */
+@media (max-width:992px){
+
+  .card{
+    padding:35px 25px;
+  }
+
+  .card1{
+    width:85%;
+    left:50%;
+    top:8%;
+  }
+
+  .card2{
+    position:relative;
+    left:auto;
+    top:auto;
+    width:90%;
+    margin:120px auto 20px auto;
+  }
+
+  h1{
+    font-size:32px;
+  }
+
+  p{
+    font-size:17px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width:768px){
+
+  .page{
+    padding:15px;
+    align-items:center;
+  }
+
+  .card{
+    width:100%;
+    padding:25px 18px;
+    border-radius:16px;
+  }
+
+  .profile{
+    width:110px;
+    height:110px;
+  }
+
+  h1{
+    font-size:26px;
+    line-height:1.3;
+  }
+
+  p{
+    font-size:15px;
+    line-height:1.7;
+  }
+
+  button{
+    width:100%;
+    padding:12px;
+    font-size:15px;
+  }
+
+  .card1{
+    position:relative;
+    top:auto;
+    left:auto;
+    transform:none;
+
+    width:100%;
+    max-width:100%;
+
+    margin-bottom:20px;
+    padding:10px 12px;
+
+    font-size:14px;
+    line-height:1.5;
+  }
+
+  .card1:hover{
+    transform:scale(1.02);
+  }
+
+  .card2{
+    position:relative;
+    top:auto;
+    left:auto;
+
+    width:100%;
+    max-width:100%;
+
+    margin-top:20px;
+    padding:18px 15px;
+
+    min-height:auto;
+    text-align:left;
+  }
+
+  .card2 p{
+    font-size:15px;
+  }
+
+  #typingText{
+    font-size:14px;
+    line-height:1.7;
   }
 
   .card1 p:last-child{
-  font-style: italic;
-  opacity: 0.9;
+    font-style: italic;
+    opacity: 0.9;
+  }
 }
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width:480px){
+
+  .card{
+    padding:20px 15px;
+  }
+
+  h1{
+    font-size:22px;
+  }
+
+  p{
+    font-size:14px;
+  }
+
+  .profile{
+    width:90px;
+    height:90px;
+  }
+
+  .card1{
+    font-size:13px;
+  }
+
+  .card2{
+    padding:15px 12px;
+  }
+
+  #typingText{
+    font-size:13px;
+  }
+
+  button{
+    font-size:14px;
+  }
 }

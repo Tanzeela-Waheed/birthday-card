@@ -4,11 +4,8 @@ const page2 = document.getElementById("page2");
 const music = document.getElementById("bgMusic");
 const typingText = document.getElementById("typingText");
 
-const message = `Dear Sir Bilal,  
-
-It has been a true honor to be your student. You have not only been our teacher but also a mentor who guided us in learning, discipline, and confidence. We will always remember your efforts and the knowledge you shared with us.  
-Wishing you a very Happy Birthday Sir 🎂  
-May Allah bless you with health, happiness, and success always.`;
+const message = `Dear Sir Bilal, It has been a true honor to be your student. You have not only been our teacher but also a mentor who guided us in learning, discipline, and confidence. We will always remember your efforts and the knowledge you shared with us. Wishing you a very Happy Birthday Sir 🎂 May Allah bless you with health, happiness, and success always.
+`;
 
 // 🎵 MUSIC READY ON PAGE LOAD
 window.addEventListener("load", () => {
