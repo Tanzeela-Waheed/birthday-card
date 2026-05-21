@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Sir 🎉</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<!-- PAGE 1 -->
+<section id="page1" class="page active">
+  <div class="bg-image" style="background-image: url('bg-1.avif');"></div>
+  <div class="card card1 ">
+    <img src="teacher.jpeg" class="profile" alt="Teacher">
+    <h1>Happy Birthday Sir 🎂</h1>
+
+<p>
+You were one of those rare mentors who turned lessons into lifelong understanding..Even after the course has ended, your words still stay with us like guidance we will carry forward in life.
+Thank you for everything, Sir.
+</p>
+
+<p style="margin-top:15px; font-style: italic; color:#ffdca8;">
+“Great teachers are not remembered for what they taught, but for how they made us feel about learning…”
+</p>
+    <button id="btn">Open Surprise 🎁</button>
+  </div>
+</section>
+
+<!-- PAGE 2 -->
+<section id="page2" class="page hidden">
+
+  <div class="bg-image" style="background-image: url('bg-2.jpg');"></div>
+
+  <div class="card card2">
+
+    <img src="teacher.jpeg" class="profile" alt="Teacher">
+
+    <h1>Respect & Gratitude</h1>
+
+    <!-- ONLY THIS WILL BE TYPED -->
+    <p id="typingText"></p>
+
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+/* Reset & font */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Playfair Display', serif;
+}
+
+/* PAGE SETUP */
+.page{
+  width:100%;
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+.hidden{ display:none; }
+.active{ display:flex; }
+
+
+
+/* GOLDEN CARD STYLE */
+.card{
+  position:relative;
+  z-index:2;
+  max-width:700px;
+  padding:40px;
+  border-radius:20px;
+  background: rgba(255, 215, 0, 0.15); /* golden touch */
+  border:1px solid rgba(255, 215, 0, 0.3);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 30px rgba(255,215,0,0.3);
+  color:#fff8dc;
+  animation: floatCard 6s ease-in-out infinite;
+}
+
+/* FLOAT ANIMATION */
+@keyframes floatCard{
+  0%{ transform:translateY(0); }
+  50%{ transform:translateY(-10px); }
+  100%{ transform:translateY(0); }
+}
+
+/* TEACHER IMAGE */
+.profile{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid rgba(255,215,0,0.7);
+  margin-bottom:20px;
+}
+
+/* HEADINGS AND TEXT */
+h1{
+  font-size:36px;
+  margin-bottom:15px;
+  color:#ffeb99; /* soft golden */
+}
+
+p{
+  font-size:18px;
+  line-height:1.8;
+  color:#fffacd;
+}
+
+/* BUTTON */
+button{
+  margin-top:20px;
+  padding:12px 25px;
+  border:none;
+  border-radius:50px;
+  background: rgba(255,215,0,0.8);
+  color:#000;
+  font-weight:600;
+  cursor:pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+button:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,215,0,0.6);
+}
+
+.card1{
+  position: absolute;
+  top: 10%;
+  left: 24%;
+  transform: translate(-50%, -50%);
+
+  width: 600px;          /* 700px se chhota */
+  max-width: 75%;        /* thora adjust */
+  min-height: 30px;      /* thora reduce */
+
+  padding: 5px 10px;    /* thora kam padding */
+
+  text-align: center;
+
+  background: rgba(59, 38, 15, 0.28);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(72, 55, 38, 0.35);
+  border-radius: 10px;
+
+  box-shadow: 0 12px 35px rgba(0,0,0,0.45);
+
+  color: #f5f5f5;
+  font-size: 17px;
+  line-height: 1.2;
+}
+
+.card1:hover{
+  transform: translate(-50%, -50%) scale(1.02);
+  transition: 0.3s ease;
+}
+
+
+/* SECOND PAGE RECTANGLE BOX */
+.card2{
+  position: absolute;
+  top: 10%;          /* upar se thora niche */
+  left: 5%;          /* left align */
+  
+  width: 500px;      /* rectangle width */
+  min-height: 250px; /* maintain rectangular shape */
+  height: auto;
+  
+  background: rgba(255, 215, 0, 0.15); /* golden touch */
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 12px;  /* slightly rounded corners */
+  backdrop-filter: blur(12px);
+  
+  padding: 20px 18px;
+  text-align: left;
+  overflow: visible;
+
+  box-shadow: 0 8px 25px rgba(255,215,0,0.3); /* soft glow */
+}
+
+/* TEXT INSIDE BOX */
+.card2 p{
+  font-size: 18px;
+  line-height: 1.6;
+  color: #fffacd;
+  margin: 0;
+
+}
+#typingText{
+  font-size: 16px;
+  line-height: 1.8;
+  color: #fffacd;
+  text-align: left;
+}
+
+@keyframes blink{
+  50%{opacity:0;}
+}
+
+/* BACKGROUND IMAGE FIX - Niche se SHOW HO */
+.bg-image{
+  position: fixed;
+  bottom: 0;               /* bottom se start */
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-size: cover;      /* screen fill */
+  background-position: center bottom; /* important: bottom focus */
+  background-repeat: no-repeat;
+
+  filter: brightness(0.88) contrast(1.05);
+  z-index: 0;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .card{
+    padding:30px 20px;
+  }
+  .profile{
+    width:120px;
+    height:120px;
+  }
+  h1{
+    font-size:28px;
+  }
+  p{
+    font-size:16px;
+  }
+  .card2{
+    padding-left:20px;
+    padding-right:20px;
+    text-align:center;
+  }
+
+  .card1 p:last-child{
+  font-style: italic;
+  opacity: 0.9;
+}
+}
