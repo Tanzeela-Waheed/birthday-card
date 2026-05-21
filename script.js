@@ -5,24 +5,27 @@ const music = document.getElementById("bgMusic");
 const typingText = document.getElementById("typingText");
 
 const message = `Dear Sir Bilal,  
+
 It has been a true honor to be your student. You have not only been our teacher but also a mentor who guided us in learning, discipline, and confidence. We will always remember your efforts and the knowledge you shared with us.  
 Wishing you a very Happy Birthday Sir 🎂  
 May Allah bless you with health, happiness, and success always.`;
 
-// 🎵 MUSIC START ON LOAD (but safe fallback)
+// 🎵 MUSIC READY ON PAGE LOAD
 window.addEventListener("load", () => {
-  music.currentTime = 30;
+  music.currentTime = 30; // skip intro
 
+  // Try autoplay (may be blocked by browser)
   music.play().catch(() => {
-    console.log("Autoplay blocked — will play on click");
+    console.log("Autoplay blocked, waiting for click");
   });
 });
 
 // 🎁 BUTTON CLICK EVENT
 btn.addEventListener("click", () => {
 
-  // ✅ MUSIC START FIX
-  music.play().catch(err => console.log("Music play blocked:", err));
+  // 🔊 ENABLE SOUND + PLAY MUSIC
+  music.muted = false;
+  music.play().catch(err => console.log("Music error:", err));
 
   // PAGE SWITCH
   page1.classList.remove("active");
